@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script type="text/javascript" src="/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=I6D5Q3misjWmd3BzavKeozyZYYBoGKJomS48m9gEJbCDDQj5RERdKZ7lpOlKHTAy65tWsCBQoCDGOklZs0jPdA" charset="UTF-8"></script><style type="text/css">
+		.boxs {
+			height: 100px;
+			width: 100px;
+			background-color: green;
+			border: solid;
+			position: absolute;
+		}
+		.firstBox {
+			background-color: white;
+			background-image: url(duck.png);
+			background-size: cover;
+		}
+	</style>
+</head>
+<body style="background-image: url(1.png); background-size: cover; height: 900px;">
+	<button class="btn btn-success bt">Кости</button>
+	<h4 style="margin-left: 20px">Score: <span class="score">100</span></h4>
+
+	<div class="boxs firstBox" style="margin-left: 20px; top: 100px">
+		<h4>finish</h4>
+	</div>
+	<div class="boxs" style="margin-left: 130px; top: 100px; background-color: green; background-size: cover;">1</div>
+	<div class="boxs" style="margin-left: 240px; background-color: yellow; top: 100px; background-size: cover;">2</div>
+	<div class="boxs" style="margin-left: 350px; background-color: red; top: 100px; background-size: cover;">3</div>
+			
+	<div class="boxs" style="margin-left: 460px;top: 100px; background-size: cover;background-color: green;">4</div> 
+	<div class="boxs" style="margin-left: 570px; background-color: yellow;top: 100px; background-size: cover;">5</div>
+	<div class="boxs" style="margin-left: 680px;  background-color: yellow; top: 100px; background-size: cover;">6</div>
+	<div class="boxs" style="left: 790px; top: 100px; background-color: red; background-size: cover;">7</div>
+	<div class="boxs" style="left: 900px; top: 100px; background-size: cover;">8</div>
+	<div class="boxs" style="left: 900px; top: 210px; background-color: yellow; background-size: cover;">9</div>
+	<div class="boxs" style="left: 900px; top: 320px; background-color: yellow; background-size: cover;">10</div>
+	<div class="boxs" style="left: 790px; top: 320px; background-color: red; background-size: cover;">11</div>
+	<div class="boxs" style="left: 680px; top: 320px; background-size: cover;">12</div>
+	<div class="boxs" style="left: 570px; top: 320px; background-color: yellow; background-size: cover;">13</div>
+	<div class="boxs" style="left: 460px; top: 320px; background-color: yellow; background-size: cover;">14</div>
+	<div class="boxs" style="left: 350px; top: 320px; background-size: cover;">15</div>
+	<div class="boxs" style="left: 240px; top: 320px; background-color: red; background-size: cover;">16</div>
+	<div class="boxs" style="left: 130px; top: 320px; background-color: yellow; background-size: cover;">17</div>
+
+	<!--последние дивы. Чтобы не было ошибки. Момент отрисовки утки-->
+	<div class="boxs" style="margin-left: 130px; margin-top: 110px; background-color: green ; opacity: 0"></div>
+	<div class="boxs" style="margin-left: 240px; margin-top: 110px; background-color: green; opacity: 0"></div>
+	<div class="boxs" style="margin-left: 350px; margin-top: 110px; background-color: green; opacity: 0"></div>
+	<div class="boxs" style="margin-left: 460px; margin-top: 110px; background-color: green; opacity: 0"></div>
+	<div class="boxs" style="margin-left: 570px; margin-top: 110px; background-color: green; opacity: 0"></div>
+	<div class="boxs" style="margin-left: 680px; margin-top: 110px; background-color: green; opacity: 0"></div>	
+
+<script type="text/javascript">
+	let button = document.querySelector('.bt')
+	let boxes = document.querySelectorAll('.boxs')
+	let score = document.querySelector('.score')
+	let point = 100
+	let shag = 0
+
+	button.onclick = function () {
+		boxes[shag].style.backgroundImage = 'none'
+		random = Math.round(Math.random()*3+1)
+		console.log(random)
+		shag = shag + random
+		boxes[shag].style.backgroundImage = 'url(duck.png)'
+
+		if (shag == 2) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 5) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 6) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 9) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 10) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 13) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 14) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 17) {
+			point = point + 10
+			score.innerHTML = point
+		}
+		if (shag == 3) {
+			point = point - 10
+			score.innerHTML = point
+		}
+		if (shag == 7) {
+			point = point - 10
+			score.innerHTML = point
+		}
+		if (shag == 11) {
+			point = point - 10
+			score.innerHTML = point
+		}
+		if (shag == 16) {
+			point = point - 10
+			score.innerHTML = point
+		}
+		if (shag>17) {
+			if (point >= 120) {
+				alert('Победил')
+			}
+			if (point < 120) {
+				alert('Проиграл')
+			}
+			shag = 0
+			boxes[shag].style.backgroundImage = 'url(duck.png)'
+			score.innerHTML = 100
+			point = 100
+			
+		}
+	}
+</script>
+</body>
+</html>
